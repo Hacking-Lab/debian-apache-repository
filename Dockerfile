@@ -53,9 +53,11 @@ RUN set -eux; \
 #RUN tar -Jxpf /tmp/s6-overlay-noarch.tar.xz -C /
 #RUN tar -Jxpf /tmp/s6-overlay-x86_64.tar.xz -C /
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite headers
 
 COPY root /
+
+RUN a2enconf csp-report-only
 
 ENTRYPOINT ["/init"]
 
