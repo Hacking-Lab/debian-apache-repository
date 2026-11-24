@@ -57,7 +57,7 @@ RUN a2enmod rewrite headers
 
 COPY root /
 
-RUN a2enconf csp-report-only
+RUN a2enconf csp
 
 ENTRYPOINT ["/init"]
 
